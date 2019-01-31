@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('animations.css');
+
+@font-face {
+    font-family: 'bebas';
+    src: url('../Fonts/bebas-webfont.woff2') format('woff2'),
+      url("../Fonts/BEBAS.ttf") format('truetype'),
+      url('../Fonts/bebas-webfont.woff') format('woff');
+    font-kerning: normal;
+
+}
+
+html{
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body, .disable-selection {
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+.top{
+  font-family: 'bebas';
+  text-align: center;
+  font-size: 21vw;
+  letter-spacing: -1vw;
+  background-image: url('../Static/marvel.png');
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intra-events{
+  overflow:hidden;
+  list-style-type: decimal;
+  font-size: 1em;
+  transform-origin:top;
+  transform:scaleY(1);
+  transition:  transform 1s, opacity 1s, max-height 1s;
+  transition-timing-function: ease;
+  max-height: 300px;
+}
+
+.events{
+  padding-left:3vw;
+  font-family: 'Exo 2';
+  font-size: 1.2em;
+}
+
+.hide{
+  animation-duration: 1s;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.shrink{
+  max-height: 0px;
+  pointer-events: none;
+}
+
+.list-head{
+  font-family: 'bebas';
+  font-size: 1.5em;
+  text-shadow: 1px 1px 10px lightblue;
+}
+
+.bottom{
+  font-family: 'bebas';
+  font-size: 1.5em;
+  background-color: white;
+  color: black;
+  white-space: pre-wrap;
+  padding: 3vw;
+}
