@@ -25,6 +25,10 @@ body, .disable-selection {
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
 
+.events{
+  padding-top: 10px;
+}
+
 .top{
   font-family: 'bebas';
   text-align: center;
@@ -94,7 +98,7 @@ p{
 
 .eventslist > li{
   position: relative;
-  width: 400px;
+  width: 600px;
   margin-bottom: 40px;
   display: block;
   background-color: white;
