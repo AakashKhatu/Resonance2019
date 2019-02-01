@@ -38,18 +38,22 @@ body, .disable-selection {
   color: transparent;
 }
 
-.intra-events{
-  overflow:hidden;
+.eventslist{
+  display: flex;
+  flex-direction: column;
+  flex-flow: wrap;
+  overflow: visible;
   list-style-type: decimal;
   font-size: 1em;
   transform-origin:top;
   transform:scaleY(1);
   transition:  transform 1s, opacity 1s, max-height 1s;
   transition-timing-function: ease;
-  max-height: 300px;
+  max-height: 100%;
+  justify-content: center;
 }
 
-.events{
+p, .events{
   padding-left:3vw;
   font-family: 'Exo 2';
   font-size: 1.2em;
@@ -68,15 +72,59 @@ body, .disable-selection {
 
 .list-head{
   font-family: 'bebas';
-  font-size: 1.5em;
+  font-size: 2em;
   text-shadow: 1px 1px 10px lightblue;
 }
 
-.bottom{
+.top2 , .bottom{
   font-family: 'bebas';
   font-size: 1.5em;
   background-color: white;
   color: black;
   white-space: pre-wrap;
   padding: 3vw;
+}
+.top2{
+  background-color: red;
+}
+
+p{
+  text-indent: 2em;
+}
+
+.eventslist > li{
+  position: relative;
+  width: 400px;
+  margin-bottom: 40px;
+  display: block;
+  background-color: white;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.eventslist > li::before{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 0 0;
+  border-color: black transparent transparent transparent;
+}
+
+.eventslist > li::after{
+  position: absolute;
+  content: "";
+  right:0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 40px;
+  border-color: transparent transparent black transparent;
+}
+
+img{
+  width: 100%;
+  height: auto;
 }
