@@ -7,8 +7,8 @@
 html {
   background-color: black;
   color: white;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -51,8 +51,8 @@ body {
   font-size: 1em;
   transition: transform 1s, opacity 1s, max-height 2s linear;
   transition-timing-function: ease;
-  max-height: 3600px;
   justify-content: center;
+  max-height: 4000px;
 }
 
 .events,
