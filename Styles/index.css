@@ -69,6 +69,7 @@ p {
 .list-head {
   width: auto;
   position: relative;
+  display: inline-block;
   text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
@@ -76,14 +77,14 @@ p {
 .list-head:before {
   content: "";
   display: block;
-  width: 80%;
+  width: 150%;
   height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   border: 1px solid white;
   transform-origin: center;
-  transform: translate(-70%, -50%) skewX(-20deg);
+  transform: translate(-60%, -50%) skewX(-20deg);
   z-index: -1;
 }
 .list-head::after {
@@ -126,13 +127,13 @@ p {
   top: 50%;
   left: 50%;
   transform-origin: center;
-  transform: rotate(2deg) translate(-50%, -50%);
+  transform: rotate(2deg) translate(-50%, -45%);
   background-color: red;
   z-index: -1;
 }
 
 .bottom::before {
-  transform: rotate(-2deg) translate(-50%, -50%);
+  transform: rotate(-2deg) translate(-50%, -55%);
 }
 
 .bottom::before {
