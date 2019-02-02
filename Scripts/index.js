@@ -2,7 +2,7 @@ var listitems = Array.from(document.getElementsByTagName('li'));
  listitems.forEach(function (x) {
    if (x.parentElement.classList.contains("eventslist"))
     x.setAttribute('data-aos', "fade-left");
-    x.setAttribute('data-aos-easing', "ease-in-out");
+    x.setAttribute('data-aos-easing', "ease");
  });
 
 var randomimages = Array.from(document.getElementsByTagName('img'));

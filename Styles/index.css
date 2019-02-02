@@ -73,7 +73,7 @@ p {
   content: "";
   position: absolute;
   margin-left: 10px;
-  top: 0.5em;
+  bottom: 0.5em;
   width: 0;
   height: 0;
   border-style: solid;
@@ -106,10 +106,14 @@ p {
   text-indent: 2em;
 }
 
+.event-name {
+  position: absolute;
+  top: 50%;
+}
+
 .eventslist > li {
   position: relative;
   margin-bottom: 40px;
-  width: 400px;
   display: block;
   background-color: white;
   color: black;
