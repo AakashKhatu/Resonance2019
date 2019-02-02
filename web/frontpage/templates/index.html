@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+  <script type="text/javascript" src="{% static "Scripts/pace.js" %}"></script>
+  <link rel="stylesheet" href="{% static "Styles\index.css"%}">
+  <link rel="stylesheet" href="{% static "Styles\loading.css"%}">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>RESONANCE 2019!</title>
+</head>
+
+<body>
+  <div class="top">
+    Resonance
+  </div>
+  <div class="top2">
+    This Year's Theme is MARVEL
+    <p>Nunc nec fermentum ex, et volutpat felis. Etiam aliquet mauris augue, ut laoreet enim bibendum sit amet. Nam dolor dolor, mollis eget mollis ac, porttitor quis massa. Aliquam rutrum lacinia orci, in condimentum tellus hendrerit a.
+  </div>
+  <div class="events">
+    <div class="list-head arrow">
+      Intra College Events
+    </div>
+    <ul class="eventslist hide">
+      {% for event in intra %}
+      <li>
+        <div class="event-name">
+          {{event.name}}
+        </div><img src="https://picsum.photos/800/400/?random">
+        <p>{{event.description}}
+        <p>Prize: {{event.prize}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="events">
+    <div class="list-head arrow">
+      Inter College Events
+    </div>
+    <ul class="eventslist hide">
+      <ul class="eventslist hide">
+        {% for event in inter %}
+        <li>
+          <div class="event-name">
+            {{event.name}}
+          </div><img src="https://picsum.photos/800/400/?random">
+          <p>{{event.description}}
+          <p>Prize: {{event.prize}}
+        </li>
+        {% endfor %}
+      </ul>
+    </ul>
+  </div>
+  <div class="bottom">
+    Contact
+    Location
+    Info
+    Time
+  </div>
+  <script type="text/javascript" src="{% static "Scripts/index.js"%}"> </script> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>

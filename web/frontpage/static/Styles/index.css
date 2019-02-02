@@ -4,7 +4,6 @@
   src: url("../Fonts/bebas-webfont.woff2") format("woff2"), url("../Fonts/BEBAS.ttf") format("truetype"), url("../Fonts/bebas-webfont.woff") format("woff");
   font-kerning: normal;
 }
-
 html {
   background-color: black;
   color: white;
@@ -68,38 +67,22 @@ p {
 }
 
 .list-head {
-  width: auto;
   position: relative;
   text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
-
-  &:before {
-    content: "";
-    display: block;
-    width: 80%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border: 1px solid white;
-    transform-origin: center;
-    transform: translate(-70%, -50%) skewX(-20deg);
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    margin-left: 10px;
-    bottom: 0.5em;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-    border-color: transparent transparent white transparent;
-    transition: transform 1s ease;
-  }
+}
+.list-head::after {
+  content: "";
+  position: absolute;
+  margin-left: 10px;
+  bottom: 0.5em;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent white transparent;
+  transition: transform 1s ease;
 }
 
 .arrow::after {
@@ -118,20 +101,20 @@ p {
   position: relative;
   background-color: transparent;
   transition: transform 2s;
-
-  &:before {
-    content: "";
-    display: block;
-    width: 200%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-    transform: rotate(2deg) translate(-50%, -50%);
-    background-color: red;
-    z-index: -1;
-  }
+}
+.bottom:before,
+.top2:before {
+  content: "";
+  display: block;
+  width: 200%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+  transform: rotate(2deg) translate(-50%, -50%);
+  background-color: red;
+  z-index: -1;
 }
 
 .bottom::before {
@@ -161,42 +144,40 @@ p {
   margin-left: 10px;
   margin-right: 10px;
   overflow: hidden;
-
-  &:hover > img {
-    transform: scale(1.1);
-    z-index: 0;
-  }
-
-  img {
-    transition: transform 0.5s ease;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  &::before {
-    z-index: 100;
-    position: absolute;
-    content: "";
-    top: -1px;
-    left: -1px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 41px 41px 0 0;
-    border-color: black transparent transparent transparent;
-  }
-
-  &::after {
-    z-index: 100;
-    position: absolute;
-    content: "";
-    right: -1px;
-    bottom: -1px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 41px 41px;
-    border-color: transparent transparent black transparent;
-  }
 }
+.eventslist > li:hover > img {
+  transform: scale(1.1);
+  z-index: 0;
+}
+.eventslist > li img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.eventslist > li::before {
+  z-index: 100;
+  position: absolute;
+  content: "";
+  top: -1px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 41px 41px 0 0;
+  border-color: black transparent transparent transparent;
+}
+.eventslist > li::after {
+  z-index: 100;
+  position: absolute;
+  content: "";
+  right: -1px;
+  bottom: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 41px 41px;
+  border-color: transparent transparent black transparent;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -5,11 +5,14 @@
   font-kerning: normal;
 }
 html {
-  width: 100vw;
   background-color: black;
   color: white;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
 }
 
 .disable-selection,
@@ -30,7 +33,7 @@ body {
   text-align: center;
   font-size: 21vw;
   letter-spacing: -1vw;
-  background-image: url("../Static/marvel.png");
+  background-image: url("../Media/marvel.png");
   background-position: center;
   background-size: cover;
   background-clip: text;
@@ -64,10 +67,24 @@ p {
 }
 
 .list-head {
+  width: auto;
   position: relative;
   text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
+}
+.list-head:before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid white;
+  transform-origin: center;
+  transform: translate(-70%, -50%) skewX(-20deg);
+  z-index: -1;
 }
 .list-head::after {
   content: "";
