@@ -49,7 +49,7 @@ body {
   font-size: 1em;
   transition: transform 1s, opacity 1s, max-height 2s linear;
   transition-timing-function: ease;
-  max-height: 2400px;
+  max-height: 3600px;
   justify-content: center;
 }
 
@@ -93,15 +93,36 @@ p {
 .top2 {
   font-family: "bebas";
   font-size: 1.5em;
-  background-color: white;
   color: black;
   white-space: pre-wrap;
   padding: 3vw;
   margin: none;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  transition: transform 2s;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: rotate(2deg) translate(-50%, -50%);
+    background-color: red;
+    z-index: -1;
+  }
 }
 
-.top2 {
-  background-color: red;
+.bottom::before {
+  transform: rotate(-2deg) translate(-50%, -50%);
+}
+
+.bottom::before {
+  background-color: white;
 }
 
 p {
