@@ -27,4 +27,8 @@ function findFirstPositive(b, a, i, c) {
 
 var dpi = findFirstPositive(x => matchMedia(`(max-resolution: ${x}dpi)`).matches)
 
-console.log(dpi)
+console.log(dpi*4)
+
+var sheet = document.createElement('style')
+sheet.innerHTML = ".eventslist > li {width: "+dpi*4+"px;}";
+document.body.appendChild(sheet);
