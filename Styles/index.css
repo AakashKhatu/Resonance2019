@@ -86,6 +86,7 @@ p {
   transform-origin: center;
   transform: translate(-60%, -50%) skewX(-20deg);
   z-index: -1;
+  transition: all 1s ease;
 }
 .list-head::after {
   content: "";
@@ -98,6 +99,11 @@ p {
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent white transparent;
   transition: transform 1s ease;
+}
+
+.list-head:focus::before,
+.list-head:hover::before {
+  transform: translate(-60%, -50%) skewX(-20deg) translateX(30px);
 }
 
 .arrow::after {
