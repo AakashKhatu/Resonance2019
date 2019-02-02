@@ -4,9 +4,6 @@
   src: url("../Fonts/bebas-webfont.woff2") format("woff2"), url("../Fonts/BEBAS.ttf") format("truetype"), url("../Fonts/bebas-webfont.woff") format("woff");
   font-kerning: normal;
 }
-@function dpi($size) {
-  @return $size * 2;
-}
 
 html {
   background-color: black;
@@ -63,19 +60,33 @@ p {
 }
 
 .hide {
-  opacity: 0;
-  transform: translateX(20px);
-}
-
-.shrink {
   max-height: 0;
   pointer-events: none;
 }
 
 .list-head {
+  position: relative;
   text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 10px;
+    top: 0.5em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent white transparent;
+    transition: transform 1s ease;
+  }
+}
+
+.arrow::after {
+  transform-origin: center;
+  transform: rotateZ(180deg);
 }
 
 .bottom,
@@ -125,10 +136,12 @@ p {
     z-index: 100;
     position: absolute;
     content: "";
+    top: -1px;
+    left: -1px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 40px 40px 0 0;
+    border-width: 41px 41px 0 0;
     border-color: black transparent transparent transparent;
   }
 
@@ -136,12 +149,12 @@ p {
     z-index: 100;
     position: absolute;
     content: "";
-    right: 0;
-    bottom: 0;
+    right: -1px;
+    bottom: -1px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 0 40px 40px;
+    border-width: 0 0 41px 41px;
     border-color: transparent transparent black transparent;
   }
 }

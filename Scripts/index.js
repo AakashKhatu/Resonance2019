@@ -1,6 +1,9 @@
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
+var listitems = Array.from(document.getElementsByTagName('li'));
+ listitems.forEach(function (x) {
+   if (x.parentElement.classList.contains("eventslist"))
+    x.setAttribute('data-aos', "fade-left");
+    x.setAttribute('data-aos-easing', "ease-in-out");
+ });
 
 var randomimages = Array.from(document.getElementsByTagName('img'));
 randomimages.forEach(function ( x, i ){
@@ -11,7 +14,9 @@ var l = Array.from(document.getElementsByClassName('list-head'));
 l.forEach(function( elem ){elem.addEventListener('click', async function(){
   var x = elem.nextElementSibling;
   x.classList.toggle("hide");
-  x.classList.toggle("shrink");
+  elem.classList.toggle("arrow");
+  AOS.refresh();
+  setTimeout(function(){ AOS.refresh(); },2000);
 })});
 
 function findFirstPositive(b, a, i, c) {

@@ -6,6 +6,7 @@
   <script type="text/javascript" src="Scripts/pace.js"></script>
   <link rel="stylesheet" href="Styles\index.css">
   <link rel="stylesheet" href="Styles\loading.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>RESONANCE 2019!</title>
 </head>
 
@@ -13,15 +14,15 @@
   <div class="top">
     Resonance
   </div>
-  <div class="top2">
+  <div data-aos="fade-left" class="top2">
     This Year's Theme is MARVEL
     <p>Nunc nec fermentum ex, et volutpat felis. Etiam aliquet mauris augue, ut laoreet enim bibendum sit amet. Nam dolor dolor, mollis eget mollis ac, porttitor quis massa. Aliquam rutrum lacinia orci, in condimentum tellus hendrerit a.
   </div>
   <div class="events">
-    <div class="list-head">
+    <div class="list-head arrow">
       Intra College Events
     </div>
-    <ul class="eventslist hide shrink">
+    <ul class="eventslist hide">
       <li><img src="https://picsum.photos/800/400/?random">
         <p>Lorem ipsum dolor sit amet, adipiscing elit. Aeneanligula eget dolor.
       </li>
@@ -49,7 +50,7 @@
     </ul>
   </div>
   <div class="events">
-    <div class="list-head">
+    <div class="list-head arrow">
       Inter College Events
     </div>
     <ul class="eventslist hide shrink">
@@ -86,6 +87,11 @@
     Time
   </div>
   <script type="text/javascript" src="Scripts/index.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
