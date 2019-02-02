@@ -6,9 +6,9 @@
 }
 
 html {
+  width: 100vw;
   background-color: black;
   color: white;
-  max-height: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -98,7 +98,6 @@ p {
   padding: 3vw;
   margin: none;
   position: relative;
-  overflow: visible;
   background-color: transparent;
   transition: transform 2s;
 
