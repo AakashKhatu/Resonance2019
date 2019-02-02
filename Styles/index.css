@@ -7,11 +7,13 @@
 html {
   background-color: black;
   color: white;
+  max-height: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-body, .disable-selection {
+.disable-selection,
+body {
   -moz-user-select: none;
   -ms-user-select: none;
   -khtml-user-select: none;
@@ -37,50 +39,50 @@ body, .disable-selection {
 }
 
 .eventslist {
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
-  overflow: visible;
+  overflow: hidden;
   list-style-type: decimal;
   font-size: 1em;
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: transform 1s, opacity 1s, max-height 1s;
+  transition: transform 1s, opacity 1s, max-height 2s linear;
   transition-timing-function: ease;
-  max-height: 100%;
+  max-height: 2400px;
   justify-content: center;
 }
 
-p, .events {
-  padding-left: 3vw;
+.events,
+p {
   font-family: "Exo 2";
   font-size: 1.2em;
 }
 
 .hide {
-  animation-duration: 1s;
   opacity: 0;
   transform: translateX(20px);
 }
 
 .shrink {
-  max-height: 0px;
+  max-height: 0;
   pointer-events: none;
 }
 
 .list-head {
+  text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
-  text-shadow: 1px 1px 10px lightblue;
 }
 
-.top2, .bottom {
+.bottom,
+.top2 {
   font-family: "bebas";
   font-size: 1.5em;
   background-color: white;
   color: black;
   white-space: pre-wrap;
   padding: 3vw;
+  margin: none;
 }
 
 .top2 {
@@ -94,12 +96,27 @@ p {
 .eventslist > li {
   position: relative;
   margin-bottom: 40px;
+  width: 400px;
   display: block;
   background-color: white;
   color: black;
   padding-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.eventslist > li:hover > img {
+  transform: scale(1.1);
+  z-index: 0;
+}
+.eventslist > li img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 .eventslist > li::before {
+  z-index: 100;
   position: absolute;
   content: "";
   width: 0;
@@ -109,6 +126,7 @@ p {
   border-color: black transparent transparent transparent;
 }
 .eventslist > li::after {
+  z-index: 100;
   position: absolute;
   content: "";
   right: 0;
@@ -118,11 +136,6 @@ p {
   border-style: solid;
   border-width: 0 0 40px 40px;
   border-color: transparent transparent black transparent;
-}
-
-img {
-  width: 100%;
-  height: auto;
 }
 
 /*# sourceMappingURL=index.css.map */

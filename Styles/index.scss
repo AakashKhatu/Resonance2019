@@ -1,20 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
-
+@import url("https://fonts.googleapis.com/css?family=Exo+2");
 @font-face {
-  font-family: 'bebas';
-  src: url('../Fonts/bebas-webfont.woff2') format("woff2"), url("../Fonts/BEBAS.ttf") format("truetype"), url('../Fonts/bebas-webfont.woff') format("woff");
+  font-family: "bebas";
+  src: url("../Fonts/bebas-webfont.woff2") format("woff2"), url("../Fonts/BEBAS.ttf") format("truetype"), url("../Fonts/bebas-webfont.woff") format("woff");
   font-kerning: normal;
 }
-
+@function dpi($size) {
+  @return $size * 2;
+}
 
 html {
   background-color: black;
   color: white;
+  max-height: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-body, .disable-selection {
+.disable-selection,
+body {
   -moz-user-select: none;
   -ms-user-select: none;
   -khtml-user-select: none;
@@ -27,11 +30,11 @@ body, .disable-selection {
 }
 
 .top {
-  font-family: 'bebas';
+  font-family: "bebas";
   text-align: center;
   font-size: 21vw;
   letter-spacing: -1vw;
-  background-image: url('../Static/marvel.png');
+  background-image: url("../Static/marvel.png");
   background-position: center;
   background-size: cover;
   background-clip: text;
@@ -40,50 +43,50 @@ body, .disable-selection {
 }
 
 .eventslist {
+  padding: 0;
   display: flex;
   flex-direction: column;
   flex-flow: wrap;
-  overflow: visible;
+  overflow: hidden;
   list-style-type: decimal;
   font-size: 1em;
-  transform-origin: top;
-  transform: scaleY(1);
-  transition: transform 1s, opacity 1s, max-height 1s;
+  transition: transform 1s, opacity 1s, max-height 2s linear;
   transition-timing-function: ease;
-  max-height: 100%;
+  max-height: 2400px;
   justify-content: center;
 }
 
-p, .events {
-  padding-left: 3vw;
-  font-family: 'Exo 2';
+.events,
+p {
+  font-family: "Exo 2";
   font-size: 1.2em;
 }
 
 .hide {
-  animation-duration: 1s;
   opacity: 0;
   transform: translateX(20px);
 }
 
 .shrink {
-  max-height: 0px;
+  max-height: 0;
   pointer-events: none;
 }
 
 .list-head {
-  font-family: 'bebas';
+  text-indent: 2em;
+  font-family: "bebas";
   font-size: 2em;
-  text-shadow: 1px 1px 10px lightblue;
 }
 
-.top2, .bottom {
-  font-family: 'bebas';
+.bottom,
+.top2 {
+  font-family: "bebas";
   font-size: 1.5em;
   background-color: white;
   color: black;
   white-space: pre-wrap;
   padding: 3vw;
+  margin: none;
 }
 
 .top2 {
@@ -97,11 +100,29 @@ p {
 .eventslist > li {
   position: relative;
   margin-bottom: 40px;
+  width: 400px;
   display: block;
   background-color: white;
   color: black;
   padding-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+
+  &:hover > img {
+    transform: scale(1.1);
+    z-index: 0;
+  }
+
+  img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   &::before {
+    z-index: 100;
     position: absolute;
     content: "";
     width: 0;
@@ -110,7 +131,9 @@ p {
     border-width: 40px 40px 0 0;
     border-color: black transparent transparent transparent;
   }
+
   &::after {
+    z-index: 100;
     position: absolute;
     content: "";
     right: 0;
@@ -121,9 +144,4 @@ p {
     border-width: 0 0 40px 40px;
     border-color: transparent transparent black transparent;
   }
-}
-
-img {
-  width: 100%;
-  height: auto;
 }
