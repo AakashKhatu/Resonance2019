@@ -78,7 +78,7 @@ p {
   &:before {
     content: "";
     display: block;
-    width: 150%;
+    width: 140%;
     height: 100%;
     position: absolute;
     top: 50%;
@@ -106,7 +106,7 @@ p {
 
 .list-head:focus::before,
 .list-head:hover::before {
-  transform: translate(-60%, -50%) skewX(-20deg) translateX(30px);
+  transform: translate(-60%, -50%) skewX(-20deg) translateX(5%);
 }
 
 .arrow::after {

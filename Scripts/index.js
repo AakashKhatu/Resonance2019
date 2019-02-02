@@ -30,5 +30,5 @@ var dpi = findFirstPositive(x => matchMedia(`(max-resolution: ${x}dpi)`).matches
 console.log(dpi*4)
 
 var sheet = document.createElement('style')
-sheet.innerHTML = ".eventslist > li {width: "+dpi*5+"px;}";
+sheet.innerHTML = ".eventslist > li {width: "+dpi*4.5+"px;}";
 document.body.appendChild(sheet);
