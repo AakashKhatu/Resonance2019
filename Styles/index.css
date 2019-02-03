@@ -73,6 +73,17 @@ p {
   text-indent: 2em;
   font-family: "bebas";
   font-size: 2em;
+  transition: color 1s ease;
+}
+.list-head:focus, .list-head:hover {
+  color: black;
+}
+.list-head:focus::before, .list-head:hover::before {
+  background-position: 0;
+  transform: translate(-60%, -50%) skewX(-20deg) translateX(5%);
+}
+.list-head:focus::after, .list-head:hover::after {
+  border-color: transparent transparent black transparent;
 }
 .list-head:before {
   content: "";
@@ -87,6 +98,9 @@ p {
   transform: translate(-60%, -50%) skewX(-20deg);
   z-index: -1;
   transition: all 1s ease;
+  background: linear-gradient(to right, white 0%, white 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 300%;
+  background-position: 100%;
 }
 .list-head::after {
   content: "";
@@ -98,12 +112,7 @@ p {
   border-style: solid;
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent white transparent;
-  transition: transform 1s ease;
-}
-
-.list-head:focus::before,
-.list-head:hover::before {
-  transform: translate(-60%, -50%) skewX(-20deg) translateX(5%);
+  transition: border-color 1s ease, transform 1s ease;
 }
 
 .arrow::after {
@@ -139,11 +148,8 @@ p {
 }
 
 .bottom::before {
-  transform: rotate(-2deg) translate(-50%, -55%);
-}
-
-.bottom::before {
   background-color: white;
+  transform: rotate(-2deg) translate(-50%, -55%);
 }
 
 p {
