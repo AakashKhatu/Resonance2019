@@ -1,8 +1,8 @@
 var ovset = false;
 var listitems = Array.from(document.getElementsByTagName('li'));
 listitems.forEach(function(lElem) {
-  if (lElem.parentElement.classList.contains("eventslist"))
-    lElem.setAttribute('data-aos', "fade-left");
+  if (lElem.parentElement.classList.contains("eventslist")){
+  lElem.setAttribute('data-aos', "fade-left");
   lElem.setAttribute('data-aos-easing', "ease");
   lElem.addEventListener('click', function() {
     if (ovset) {
@@ -13,6 +13,7 @@ listitems.forEach(function(lElem) {
       ovset = true;
     }
   });
+}
 });
 
 var l = Array.from(document.getElementsByClassName('list-head'));
