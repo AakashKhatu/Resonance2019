@@ -1,8 +1,11 @@
 var listitems = Array.from(document.getElementsByTagName('li'));
- listitems.forEach(function (x) {
-   if (x.parentElement.classList.contains("eventslist"))
-    x.setAttribute('data-aos', "fade-left");
-    x.setAttribute('data-aos-easing', "ease");
+ listitems.forEach(function (lElem) {
+   if (lElem.parentElement.classList.contains("eventslist"))
+    lElem.setAttribute('data-aos', "fade-left");
+    lElem.setAttribute('data-aos-easing', "ease");
+    lElem.addEventListener('click', function(){
+      console.log(this);
+    });
  });
 
 var randomimages = Array.from(document.getElementsByTagName('img'));

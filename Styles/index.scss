@@ -56,12 +56,6 @@ body {
   max-height: 4000px;
 }
 
-.events,
-p {
-  font-family: "Exo 2";
-  font-size: 1.2em;
-}
-
 .hide {
   max-height: 0;
   pointer-events: none;
@@ -82,6 +76,7 @@ p {
 
     &::before {
       background-position: 0;
+      -webkit-backface-visibility: hidden;
       transform: translate(-60%, -50%) skewX(-20deg) translateX(5%);
     }
 
@@ -99,6 +94,7 @@ p {
     top: 50%;
     left: 50%;
     border: 1px solid white;
+    -webkit-backface-visibility: hidden;
     transform-origin: center;
     transform: translate(-60%, -50%) skewX(-20deg);
     z-index: -1;
@@ -118,25 +114,29 @@ p {
     border-style: solid;
     border-width: 0 10px 10px 10px;
     border-color: transparent transparent white transparent;
+    -webkit-backface-visibility: hidden;
     transition: border-color 1s ease, transform 1s ease;
   }
 }
 
 .arrow::after {
   transform-origin: center;
+  -webkit-backface-visibility: hidden;
   transform: rotateZ(180deg);
 }
 
 .bottom,
+.edm,
 .top2 {
   font-family: "bebas";
   font-size: 1.5em;
   color: black;
-  white-space: pre-wrap;
+  white-space: normal;
   padding: 3vw;
   margin: none;
   position: relative;
   background-color: transparent;
+  -webkit-backface-visibility: hidden;
   transition: transform 2s;
 
   &:before {
@@ -147,6 +147,7 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-backface-visibility: hidden;
     transform-origin: center;
     transform: rotate(2deg) translate(-50%, -45%);
     background-color: red;
@@ -156,7 +157,23 @@ p {
 
 .bottom::before {
   background-color: white;
+  -webkit-backface-visibility: hidden;
   transform: rotate(-2deg) translate(-50%, -55%);
+}
+
+.edm {
+  display: inline-block;
+  text-indent: 2em;
+  font-family: "bebas";
+
+  &::before {
+    transform: rotate(2deg) translate(-50%, -30%);
+  }
+}
+
+.edm-head,
+.theme-head {
+  font-size: 2em;
 }
 
 p {
@@ -180,11 +197,14 @@ p {
   overflow: hidden;
 
   &:hover > img {
+    -webkit-backface-visibility: hidden;
     transform: scale(1.1);
     z-index: 0;
   }
 
   img {
+    border-bottom: 3px solid black;
+    -webkit-backface-visibility: hidden;
     transition: transform 0.5s ease;
     width: 100%;
     height: auto;
@@ -216,4 +236,10 @@ p {
     border-width: 0 0 45px 45px;
     border-color: transparent transparent black transparent;
   }
+}
+
+.events,
+p {
+  font-family: "Exo 2";
+  font-size: 1.2em;
 }
