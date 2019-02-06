@@ -5,6 +5,7 @@ listitems.forEach(function(lElem) {
   lElem.setAttribute('data-aos', "fade-left");
   lElem.setAttribute('data-aos-easing', "ease");
   lElem.addEventListener('click', function() {
+    fillOverlay(this);
     if (ovset) {
       ov.classList.toggle("closed");
       ov.classList.toggle("opened");

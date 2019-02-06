@@ -18,3 +18,7 @@ def returnJson(request):
     inter = serializers.serialize("json", Event.objects.filter(scope="inter"))
     intra = serializers.serialize("json", Event.objects.filter(scope="intra"))
     return JsonResponse({"inter": inter, "intra": intra})
+
+
+def register(request):
+    return render(request, 'reg.html', {})

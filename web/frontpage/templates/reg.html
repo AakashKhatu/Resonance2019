@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./Styles/reg.css">
+    <link rel="stylesheet" href={% static "./Styles/reg.css" %}>
     <title></title>
   </head>
   <body>
@@ -35,6 +36,6 @@
       <input id="sel-event" list="events" onclick="this.value = ''"><br>
       <input class="sbmt" type="button" name="submit" value="Submit"><br>
     </form>
-    <script type="text/javascript" src="./Scripts/reg.js"></script>
+    <script type="text/javascript" src={% static "./Scripts/reg.js" %}></script>
   </body>
 </html>
