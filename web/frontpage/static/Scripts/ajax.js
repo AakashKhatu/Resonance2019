@@ -34,6 +34,7 @@ function fillOverlay( ce ){
         break;
     }
   }
+  console.log(even);
   na.innerHTML = even["name"];
   image.innerHTML = even["image"];
   description.innerHTML = even["description"];

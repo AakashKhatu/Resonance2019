@@ -131,6 +131,7 @@ body {
 }
 .list-head:focus::before, .list-head:hover::before {
   background-position: 0;
+  -webkit-backface-visibility: hidden;
   transform: translate(-60%, -50%) skewX(-20deg) translateX(5%);
 }
 .list-head:focus::after, .list-head:hover::after {
@@ -145,6 +146,7 @@ body {
   top: 50%;
   left: 50%;
   border: 1px solid white;
+  -webkit-backface-visibility: hidden;
   transform-origin: center;
   transform: translate(-60%, -50%) skewX(-20deg);
   z-index: -1;
@@ -163,11 +165,13 @@ body {
   border-style: solid;
   border-width: 0 10px 10px 10px;
   border-color: transparent transparent white transparent;
+  -webkit-backface-visibility: hidden;
   transition: border-color 1s ease, transform 1s ease;
 }
 
 .arrow::after {
   transform-origin: center;
+  -webkit-backface-visibility: hidden;
   transform: rotateZ(180deg);
 }
 
@@ -182,6 +186,7 @@ body {
   margin: none;
   position: relative;
   background-color: transparent;
+  -webkit-backface-visibility: hidden;
   transition: transform 2s;
 }
 .bottom:before,
@@ -194,15 +199,17 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-backface-visibility: hidden;
   transform-origin: center;
-  transform: rotate(2deg) translate(-50%, -40%);
+  transform: rotate(2deg) translate(-50%, -45%);
   background-color: red;
   z-index: -1;
 }
 
 .bottom::before {
   background-color: white;
-  transform: rotate(-2deg) translate(-50%, -60%);
+  -webkit-backface-visibility: hidden;
+  transform: rotate(-2deg) translate(-50%, -55%);
 }
 
 .edm {
@@ -211,7 +218,7 @@ body {
   font-family: "bebas";
 }
 .edm::before {
-  transform: rotate(2deg) translate(-50%, -35%);
+  transform: rotate(2deg) translate(-50%, -30%);
 }
 
 .edm-head,
@@ -240,11 +247,13 @@ p {
   overflow: hidden;
 }
 .eventslist > li:hover > img {
+  -webkit-backface-visibility: hidden;
   transform: scale(1.1);
   z-index: 0;
 }
 .eventslist > li img {
   border-bottom: 3px solid black;
+  -webkit-backface-visibility: hidden;
   transition: transform 0.5s ease;
   width: 100%;
   height: auto;
@@ -297,6 +306,7 @@ p {
   opacity: 0;
   pointer-events: none;
 }
+
 .close {
   text-align: center;
   display: block;
@@ -314,6 +324,16 @@ p {
 .opened {
   -webkit-animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.ft {
+  font-family: "Exo 2";
+  font-size: 1.2em;
+  text-align: right;
+  color: white;
+}
+.ft a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.css.map */

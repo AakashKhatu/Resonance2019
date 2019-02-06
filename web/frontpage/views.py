@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import interEvents, intraEvents
+from .models import Event
 from django.core import serializers
 
 
 def post_list(request):
-    inter = interEvents.objects.all()
-    intra = intraEvents.objects.all()
+    inter = Event.objects.filter(scope="inter")
+    intra = Event.objects.filter(scope="intra")
     return render(request, 'index.html', {"inter": inter, "intra": intra})
 
 
@@ -15,6 +15,6 @@ def ajaxtest(request):
 
 
 def returnJson(request):
-    inter = serializers.serialize("json", interEvents.objects.all())
-    intra = serializers.serialize("json", intraEvents.objects.all())
+    inter = serializers.serialize("json", Event.objects.filter(scope="inter"))
+    intra = serializers.serialize("json", Event.objects.filter(scope="intra"))
     return JsonResponse({"inter": inter, "intra": intra})

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import interEvents, intraEvents
+from .models import Event
 
 
-admin.site.register(interEvents)
-admin.site.register(intraEvents)
+admin.site.register(Event)
