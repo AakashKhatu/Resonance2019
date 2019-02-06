@@ -21,4 +21,8 @@ def returnJson(request):
 
 
 def register(request):
-    return render(request, 'reg.html', {})
+    if request.method == 'GET':
+        return render(request, 'reg.html', {})
+    else:
+        print(request)
+        return render(request, 'success.html', {})

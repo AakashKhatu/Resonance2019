@@ -140,3 +140,17 @@ label{
 .hide{
   display: none;
 }
+
+.close {
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+a{
+  color: black;
+}

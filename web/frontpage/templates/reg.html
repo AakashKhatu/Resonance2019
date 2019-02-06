@@ -10,8 +10,10 @@
   <body>
     <div class="title">Registration
       Form
+      <div class="close"><a href="../">╳</a></div>
     </div>
     <form class="regis" method="post">
+      {% csrf_token %}
       <datalist id="events">
         <option value="1">
         <option value="2">
@@ -34,7 +36,7 @@
       <input id="aadhar" class="hide" type="text" name="aadhar" value="aadhar" onclick="this.value = ''"><br>
       <label for="sel-event">Select Event</label>
       <input id="sel-event" list="events" onclick="this.value = ''"><br>
-      <input class="sbmt" type="button" name="submit" value="Submit"><br>
+      <input class="sbmt" type="submit" name="submit" value="Submit"><br>
     </form>
     <script type="text/javascript" src={% static "./Scripts/reg.js" %}></script>
   </body>

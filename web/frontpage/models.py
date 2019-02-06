@@ -11,5 +11,14 @@ class Event(models.Model):
     members = models.PositiveIntegerField()
     date = models.DateField()
     starttime = models.TimeField()
-    endtime = models.TimeField()
+    endtime = models.TimeField(blank=True)
     location = models.CharField(max_length=50)
+
+
+class Entry(models.Model):
+    name = models.CharField(max_length=30)
+    ph = models.CharField(max_length=12)
+    clg = models.CharField(max_length=30)
+    clgid = models.CharField(max_length=15, blank=True)
+    aad = models.CharField(max_length=15)
+    event = models.CharField(max_length=30)
