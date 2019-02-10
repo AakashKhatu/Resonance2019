@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="Styles\index.css">
     <link rel="stylesheet" href="Styles\loading.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Styles/photoswipe.css">
+    <link rel="stylesheet" href="./Styles/default-skin/default-skin.css">
     <title>RESONANCE 2019!</title>
   </head>
   <body>
@@ -14,7 +16,7 @@
       <div class="overlay-text" id="ov-text">
         Description
       </div>
-      <div id="registrationlink"><br>
+      <div id="registrationlink">
         Register
       </div>
     </div>
@@ -114,11 +116,54 @@
     <br>
     <br>
     <div class="bottom"><br>
-      Contact <br>
-      Location <br>
+      <div id="gal">
+        Last Year Photos <br>
+      </div>
+      Contact Info <br>
       Info <br>
       Time <br>
     </div>
+    <!-- Gallery -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            <button class="pswp__button pswp__button--share" title="Share"></button>
+            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+          </button>
+          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+          </button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Gallery End -->
+    <script src="./Scripts/photoswipe.min.js"></script>
+    <script src="./Scripts/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="Scripts/gallery.js"></script>
     <script type="text/javascript" src="Scripts/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <br>
