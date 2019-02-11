@@ -340,3 +340,8 @@ p {
   -webkit-animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+* {
+  border: 1px solid red;
+  outline-offset: -1px;
+}

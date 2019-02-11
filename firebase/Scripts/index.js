@@ -3,7 +3,7 @@ var listitems = Array.from(document.getElementsByTagName('li'));
 var elemid="not updated";
 var xhr = new XMLHttpRequest();
 // document.getElementById("form").width = document.clientWidth;
-
+var currentForm = "";
 xhr.onload = function () {
   ov.children[1].innerHTML = xhr.responseText;
 };
@@ -15,6 +15,7 @@ listitems.forEach(function(lElem) {
     elem = this
     xhr.open('GET', './descriptions/'+this.id+'.txt');
     xhr.send();
+    currentForm = this.getAttribute('data-scope');
     if (ovset) {
       ov.classList.toggle("closed");
       ov.classList.toggle("opened");
@@ -68,7 +69,25 @@ clreg.addEventListener('click', function() {
   reg.classList.toggle("opened");
 });
 
-document.getElementById("registrationlink").addEventListener('click', function() {
+var interform="https://goo.gl/forms/4WYVjs4jYpQ8C90V2";
+var intraform="https://goo.gl/forms/H60xokGc1aleBm5c2";
+var edmform="https://goo.gl/forms/nm0yK7IGTtxMUGF82";
+
+function openRegister(t) {
+  if(t.getAttribute('id') == "registrationlink"){
+    if(currentForm == "inter"){
+      if(iform.src!=interform)
+        iform.src=interform;
+    }
+    else if(currentForm == "intra"){
+      if(iform.src!=intraform)
+        iform.src=intraform;
+    }
+  }
+  else{
+    if(iform.src!=edmform)
+        iform.src=edmform;
+  }
   iform.hidden = !iform.hidden;
   if (regset) {
     reg.classList.toggle("closed");
@@ -77,4 +96,4 @@ document.getElementById("registrationlink").addEventListener('click', function()
     reg.classList.toggle("opened");
     regset = true;
   }
-});
+}

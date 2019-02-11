@@ -16,16 +16,16 @@
       <div class="overlay-text" id="ov-text">
         Description
       </div>
-      <div id="registrationlink">
+      <div id="registrationlink" onclick="openRegister(this)">
         Register
       </div>
     </div>
     <div class="overlay registration" id="reg">
       <div class="close" id="regcl">╳</div><br><br>
-      <iframe id="form" src="https://docs.google.com/forms/d/e/1FAIpQLSevC4PNwpgahGUmw7nhiqg33iad3cnLRU_jD2Jxqr-tgW08mA/viewform?embedded=true" width="640" height="627" frameborder="0" marginheight="0" marginwidth="0" hidden>Loading...</iframe>
+      <iframe id="form" src="" width="640" height="627" frameborder="0" marginheight="0" marginwidth="0" hidden>Loading...</iframe>
     </div>
     <div class="top">
-      Resonance
+        Resonance
       <div class="marvel">
         marvel
       </div>
@@ -43,23 +43,23 @@
         Inter College Events
       </div>
       <ul class="eventslist hide shrink">
-        <li id="strtp">
+        <li id="strtp" data-scope="inter">
           <img src="./Media/placeholder.png">
           <p>Street Play
         </li>
-        <li id="fas">
+        <li id="fas" data-scope="inter">
           <img src="./Media/placeholder.png">
           <p>Fashion Show
         </li>
-        <li id="talhunt">
-          <img src="./Media/placeholder.png">
+        <li id="talhunt" data-scope="inter">
+          <img src="./Media/th.jpg">
           <p>Talent Hunt
         </li>
-        <li id="waro">
-          <img src="./Media/placeholder.png">
+        <li id="waro" data-scope="inter">
+          <img src="./Media/band.jpg">
           <p>War Of Bands
         </li>
-        <li id="grpd">
+        <li id="grpd" data-scope="inter">
           <img src="./Media/placeholder.png">
           <p>Group Dance
         </li>
@@ -70,47 +70,50 @@
         Intra College Events
       </div>
       <ul class="eventslist hide">
-        <li id="meh">
-          <img src="./Media/mehendi.jpg">
-          <p>Mehendi
-        </li>
-        <li id="rang">
-          <img src="./Media/placeholder.png">
-          <p>Rangoli
-        </li>
-        <li id="tres">
-          <img src="./Media/treasurehunt.jpeg">
-          <p>Treasure Hunt
-        </li>
-        <li id="tugo">
-          <img src="./Media/placeholder.png">
-          <p>Tug of War
-        </li>
-        <li id="preo">
+        <li id="preo" data-scope="intra">
           <img src="./Media/placeholder.png">
           <p>Pre-O-Mania
         </li>
-        <li id="strth">
+        <li id="tres" data-scope="intra">
+          <img src="./Media/treasurehunt.jpeg">
+          <p>Treasure Hunt
+        </li>
+        <li id="tugo" data-scope="intra">
+          <img src="./Media/tuw.jpg">
+          <p>Tug of War
+        </li>
+        <li id="strth" data-scope="intra">
           <img src="./Media/st.png">
           <p>Stranger Things
         </li>
-        <li id="manv">
+        <li id="manv" data-scope="intra">
           <img src="./Media/mvf.jpg">
           <p>Man VS Food
         </li>
-        <li id="musc">
+        <li id="meh" data-scope="intra">
+          <img src="./Media/mehendi.jpg">
+          <p>Mehendi
+        </li>
+        <li id="musc" data-scope="intra">
           <img src="./Media/placeholder.png">
           <p>Muscle Mania
         </li>
+        <li id="rang" data-scope="intra">
+          <img src="./Media/placeholder.png">
+          <p>Rangoli
+        </li>
       </ul>
     </div>
-    <div class="edm">
+    <div class="edm" id="edm">
       <div class="edm-head">
         EDM     Night
       </div>
       <br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et fermentum dui.
         <br><br><br><br><br><br><br><br><br>
+      <div class="edmbtn" onclick="openRegister(this)">
+        Register
+      </div>
     </div>
     <br>
     <br>

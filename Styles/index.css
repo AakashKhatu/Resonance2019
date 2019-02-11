@@ -326,4 +326,9 @@ p {
   animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+* {
+  border: 1px solid red;
+  outline-offset: -1px;
+}
+
 /*# sourceMappingURL=index.css.map */
