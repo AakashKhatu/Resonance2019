@@ -396,7 +396,7 @@ p {
 .edmbtn:focus,
 .edmbtn:hover {
   background-color: black;
-  color: limegreen;
+  color: lime;
 }
 
 .description {
