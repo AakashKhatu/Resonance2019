@@ -241,6 +241,7 @@ body {
 }
 
 .edm {
+  width: 100%;
   color: white;
   display: inline-block;
   text-indent: 2em;
@@ -410,11 +411,30 @@ p {
   background-color: darkblue;
 }
 
-#form {
+#form,
+#map {
   margin-top: 10px;
   width: 100%;
   text-align: center;
   color: white;
+}
+
+#gal,
+.collapsible {
+  cursor: pointer;
+}
+
+a {
+  color: red;
+}
+
+.content {
+  font-family: "Exo 2";
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
 
 /*# sourceMappingURL=index.css.map */
