@@ -112,10 +112,9 @@ body {
   align-items: center;
   font-family: "avengers";
   font-size: 21vw;
-  background-color: grey;
-  background-clip: text;
+  color: lightgrey;
+  text-shadow: 0 0 10px red;
   -webkit-background-clip: text;
-  color: transparent;
   height: 110vh;
   margin: none;
   padding: none;
@@ -125,7 +124,7 @@ body {
     font-size: 0.5em;
     letter-spacing: -1vw;
     color: red;
-    background-clip: none;
+    text-shadow: 2px 2px 10px red;
   }
 }
 
