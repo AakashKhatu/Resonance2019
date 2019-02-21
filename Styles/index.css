@@ -4,6 +4,11 @@
   src: url("../Fonts/bebas-webfont.woff2") format("woff2"), url("../Fonts/BEBAS.ttf") format("truetype"), url("../Fonts/bebas-webfont.woff") format("woff");
   font-kerning: normal;
 }
+@font-face {
+  font-family: "avengers";
+  src: url("../Fonts/avengers.ttf") format("truetype");
+  font-kerning: normal;
+}
 @-webkit-keyframes flip-out-diag-1-tr {
   0% {
     -webkit-transform: rotate3d(1, 1, 0, 0deg);
@@ -63,12 +68,19 @@
 html {
   background-color: black;
   color: white;
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 .disable-selection,
@@ -85,16 +97,26 @@ body {
 }
 
 .top {
-  font-family: "bebas";
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "avengers";
   font-size: 21vw;
-  letter-spacing: -1vw;
-  background-image: url("../Media/marvel.png");
-  background-position: center;
-  background-size: cover;
+  background-color: grey;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  height: 110vh;
+  margin: none;
+  padding: none;
+}
+.top > .marvel {
+  font-family: "bebas";
+  font-size: 0.5em;
+  letter-spacing: -1vw;
+  color: red;
+  background-clip: none;
 }
 
 .eventslist {
@@ -194,15 +216,16 @@ body {
 .top2:before {
   content: "";
   display: block;
-  width: 200%;
+  width: 150%;
   height: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-backface-visibility: hidden;
   transform-origin: center;
-  transform: rotate(2deg) translate(-50%, -45%);
+  transform: rotate(2deg) translate(-50%, -50%);
   background-color: red;
+  box-shadow: 0 0 20px red;
   z-index: -1;
 }
 
@@ -212,13 +235,30 @@ body {
   transform: rotate(-2deg) translate(-50%, -55%);
 }
 
+.top2 {
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+.top2::before {
+  background: url("../Media/infi.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .edm {
+  width: 100%;
+  color: white;
   display: inline-block;
   text-indent: 2em;
   font-family: "bebas";
 }
 .edm::before {
-  transform: rotate(2deg) translate(-50%, -30%);
+  height: 100%;
+  background: url("../Media/edm2.jpeg");
+  background-position: 50% 75%;
+  transform: rotate(2deg) translate(-45%, -45%);
+  background-size: cover;
 }
 
 .edm-head,
@@ -293,21 +333,23 @@ p {
 .overlay {
   text-indent: 2em;
   font-family: "bebas";
-  color: black;
+  color: white;
   position: fixed;
   display: block;
-  background-color: white;
+  background-color: black;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   z-index: 5;
   opacity: 0;
   pointer-events: none;
 }
 
 .close {
+  text-indent: 0;
   text-align: center;
   display: block;
   position: absolute;
@@ -326,9 +368,84 @@ p {
   animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-* {
-  border: 1px solid red;
-  outline-offset: -1px;
+.credits {
+  width: 98vw;
+  font-family: "Exo 2";
+  font-size: 1em;
+  text-align: right;
+  color: white;
+}
+.credits > a {
+  color: #00BCD4;
+}
+
+.overlay-text {
+  font-family: "Exo 2";
+  font-size: 2em;
+  padding: 10px 10px 0;
+}
+
+#registrationlink,
+.edmbtn {
+  clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+  padding: 10px 40px;
+  margin-left: 40px;
+  margin-top: 20px;
+  background-color: white;
+  color: black;
+  text-indent: 0;
+  display: inline-block;
+  font-size: 2.5em;
+  vertical-align: bottom;
+  transition: 1s background-color ease, 1s color ease;
+}
+#registrationlink:focus, #registrationlink:hover,
+.edmbtn:focus,
+.edmbtn:hover {
+  background-color: black;
+  color: lime;
+}
+
+.description {
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+.edmbtn {
+  color: white;
+  font-size: 1.5em;
+  background-color: darkblue;
+}
+
+#form,
+#map {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+#gal,
+.collapsible {
+  cursor: pointer;
+}
+
+a {
+  color: red;
+}
+
+.content {
+  font-family: "Exo 2";
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.com {
+  font-family: "Exo 2";
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=index.css.map */
